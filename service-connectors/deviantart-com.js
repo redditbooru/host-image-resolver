@@ -9,7 +9,7 @@ module.exports = function(urlPieces) {
         const data = JSON.parse(body);
         !!data.url ? resolve(data.url) : reject();
       } catch (exc) {
-        reject(`Server returns an invalid response [HTTP ${res.code}]`);
+        reject(`Server returned an invalid response [HTTP ${res.code}]`);
       }
     });
   });

@@ -1,5 +1,6 @@
-// No defaults at this time, but the may happen
-const DEFAULT_CONFIG = {};
+const DEFAULT_CONFIG = {
+  TUMBLR_KEY: 'NO_KEY'
+};
 
 var productConfig = {};
 
@@ -8,4 +9,4 @@ try {
   productConfig = require.main.require('./hir-config');
 } catch (exc) {}
 
-module.exports = Object.assign(productConfig, productConfig);
+module.exports = Object.assign(productConfig, DEFAULT_CONFIG);
