@@ -1,6 +1,7 @@
 const expect = require('expect.js');
 const nock = require('nock');
-const hostImageResolver = require('../index');
+
+const testUrl = require('./test-helpers');
 
 const TEST_ID = 123456789;
 const PHOTO1 = 'this_photo.jpg';
@@ -43,11 +44,10 @@ describe('tumblr tests', function() {
   });
 
   it('should return all pictures in a tumblr post', function() {
-    return hostImageResolver(`http://test.tumblr.com/post/${TEST_ID}/this-is-a-test`).then((urls) => {
-      expect(urls).to.be.an('array');
-      expect(urls).to.have.length(2);
-      expect(urls).to.eql([ PHOTO1, PHOTO2 ]);
-    });
+    return testUrl(`http://test.tumblr.com/post/${TEST_ID}/this-is-a-test`, [
+      PHOTO1,
+      PHOTO2
+    ]);
   });
 
 });

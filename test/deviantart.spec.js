@@ -1,6 +1,6 @@
 const expect = require('expect.js');
 const nock = require('nock');
-const hostImageResolver = require('../index');
+const testUrl = require('./test-helpers');
 
 const RESPONSE_URL = 'this is the "URL"';
 
@@ -14,10 +14,8 @@ module.exports = function(url) {
   });
 
   it('should resolve to an image', function() {
-    return hostImageResolver(url).then((urls) => {
-      expect(urls).to.be.an('array');
-      expect(urls).to.have.length(1);
-      expect(urls[0]).to.be(RESPONSE_URL);
-    });
+    return testUrl(url, [
+      RESPONSE_URL
+    ]);
   });
 };

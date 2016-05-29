@@ -1,7 +1,7 @@
 const expect = require('expect.js');
 const nock = require('nock');
 
-const hostImageResolver = require('../index');
+const testUrl = require('./test-helpers');
 
 const TEST_ID = 'SolidLiquidSolidus';
 const GIF_URL = 'SnakeSnakeSnake';
@@ -19,11 +19,9 @@ describe('gfycat tests', function() {
   });
 
   it('should return the GIF URL', function() {
-    return hostImageResolver(`https://gfycat.com/${TEST_ID}`).then((urls) => {
-      expect(urls).to.be.an('array');
-      expect(urls).to.have.length(1);
-      expect(urls[0]).to.be(GIF_URL);
-    });
+    return testUrl(`https://gfycat.com/${TEST_ID}`, [
+      GIF_URL
+    ]);
   });
 
 });
