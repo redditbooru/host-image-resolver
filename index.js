@@ -33,7 +33,11 @@ module.exports = function(url) {
           resolve(Array.isArray(urls) ? urls : [ urls ]);
         });
       } catch (exc) {
-        console.error(`Unable to find service connector for ${urlPieces.host}`);
+        if (exc.code && exc.code === 'MODULE_NOT_FOUND') {
+          console.error(`Unable to find service connector for ${urlPieces.host}`);
+        } else {
+          console.error(exc);
+        }
         resolve([ url ]);
       }
     }
