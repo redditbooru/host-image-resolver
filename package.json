@@ -4,7 +4,7 @@
   "description": "Resolves various image host URLs to image paths",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [
     "node",
@@ -14,5 +14,10 @@
   "license": "WTFPL",
   "dependencies": {
     "request": "^2.72.0"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^2.5.3",
+    "nock": "^8.0.0"
   }
 }

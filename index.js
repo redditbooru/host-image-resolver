@@ -28,8 +28,10 @@ module.exports = function(url) {
       try {
         const service = cache[serviceName] || require(`./service-connectors/${serviceName}`);
         cache[serviceName] = service;
-        retVal = service(urlPieces).then(resolve);
-        retVal = Array.isArray(retVal) ? retVal : [ retVal ];
+        service(urlPieces).then((urls) => {
+          // Covnvert to an array if we weren't passed one
+          resolve(Array.isArray(urls) ? urls : [ urls ]);
+        });
       } catch (exc) {
         console.error(`Unable to find service connector for ${urlPieces.host}`);
         resolve([ url ]);
