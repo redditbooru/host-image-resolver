@@ -1,0 +1,18 @@
+{
+  "name": "host-image-resolver",
+  "version": "0.1.0",
+  "description": "Resolves various image host URLs to image paths",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "javascript"
+  ],
+  "author": "Matt Hackmann",
+  "license": "WTFPL",
+  "dependencies": {
+    "request": "^2.72.0"
+  }
+}
