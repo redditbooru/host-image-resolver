@@ -1,5 +1,9 @@
+const pjson = require('./package');
+
 const DEFAULT_CONFIG = {
-  TUMBLR_KEY: 'NO_KEY'
+  TUMBLR_KEY: 'NO_KEY',
+  USER_AGENT: `Host Image Resolver ${pjson.version}, nodejs`,
+  IMGUR_CLIENT_ID: 'NO_KEY'
 };
 
 var productConfig = {};
@@ -9,4 +13,4 @@ try {
   productConfig = require.main.require('./hir-config');
 } catch (exc) {}
 
-module.exports = Object.assign(productConfig, DEFAULT_CONFIG);
+module.exports = Object.assign({}, DEFAULT_CONFIG, productConfig);
