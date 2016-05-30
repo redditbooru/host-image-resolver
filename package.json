@@ -13,6 +13,7 @@
   "author": "Matt Hackmann",
   "license": "WTFPL",
   "dependencies": {
+    "jsdom": "^9.2.1",
     "request": "^2.72.0"
   },
   "devDependencies": {
