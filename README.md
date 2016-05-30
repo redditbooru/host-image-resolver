@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/dxprog/anime-bracket.svg)](https://travis-ci.org/dxprog/host-image-resolver)
+[![Build Status](https://travis-ci.org/dxprog/host-image-resolver.svg)](https://travis-ci.org/dxprog/host-image-resolver)
 
 #Host Image Resolver
 
