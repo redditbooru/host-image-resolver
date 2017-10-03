@@ -31,7 +31,7 @@ module.exports = function(url) {
         service(urlPieces).then((urls) => {
           // Covnvert to an array if we weren't passed one
           resolve(Array.isArray(urls) ? urls : [ urls ]);
-        }).catch( err => reject( 'service error: '+err));
+        }).catch(reject);
       } catch (exc) {
         if (exc.code && exc.code === 'MODULE_NOT_FOUND') {
           console.error(`Unable to find service connector for ${urlPieces.host}`);
